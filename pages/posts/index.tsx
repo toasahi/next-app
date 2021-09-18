@@ -14,14 +14,14 @@ type Posts = {
 
 export default function index({ posts }: Posts) {
   return (
-    <div>
-      <h1>POST一覧</h1>
-      <ul>
+    <div className="mx-auto container p-10">
+      <h1 className="text-5xl text-blue-400">POST一覧</h1>
+      <ul className="leading-4">
         {posts.map((post) => {
           return (
-            <li key={post.id}>
+            <li key={post.id} className="my-5">
               <Link href={`/posts/${post.id}`}>
-                <a>{post.title}</a>
+                <a className="text-xl text-gray-500 hover:text-gray-700">{post.title}</a>
               </Link>
             </li>
           );
