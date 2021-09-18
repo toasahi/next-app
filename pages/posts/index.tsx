@@ -1,5 +1,5 @@
-import { GetStaticProps } from "next";
-import Link from "next/link";
+import { GetStaticProps } from 'next';
+import Link from 'next/link';
 
 export interface Post {
   userId: string;
@@ -9,10 +9,10 @@ export interface Post {
 }
 
 type Posts = {
-  posts : Array<Post>
-}
+  posts: Array<Post>;
+};
 
-export default function index({ posts }:Posts) {
+export default function index({ posts }: Posts) {
   return (
     <div>
       <h1>POST一覧</h1>
@@ -30,15 +30,15 @@ export default function index({ posts }:Posts) {
     </div>
   );
 }
-  
-  // export async function getServerSideProps() {
-  //   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
-  //   const posts = await res.json();
-  //   return { props: { posts } };
-  // }
 
-  export const getStaticProps: GetStaticProps = ( async ()=>{
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
-    const posts = await res.json();
-    return { props: { posts } };
-  })
+// export async function getServerSideProps() {
+//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+//   const posts = await res.json();
+//   return { props: { posts } };
+// }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+  const posts = await res.json();
+  return { props: { posts } };
+};

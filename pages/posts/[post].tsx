@@ -1,14 +1,14 @@
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next';
 
 type Post = {
   userId: string;
   id: number;
   title: string;
   body: string;
-}
+};
 
-export default function post( post :Post) {
-  console.log(post)
+export default function post(post: Post) {
+  console.log(post);
   return (
     <div>
       <h1>POST(投稿){post.id}</h1>
@@ -36,9 +36,9 @@ export default function post( post :Post) {
 //     };
 //   }
 //   return{props:post}
-// }) 
+// })
 
-export const getStaticProps: GetStaticProps = async ({params})=>{
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id = params.post;
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
   const post = await res.json();
@@ -47,18 +47,18 @@ export const getStaticProps: GetStaticProps = async ({params})=>{
       notFound: true,
     };
   }
-  return{props:post}
-}
+  return { props: post };
+};
 
-export const getStaticPaths: GetStaticPaths = async()=>{
+export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
   const posts = await res.json();
   // const paths = posts.map((post) => `/posts/${post.id}`);
   const paths = posts.map((post) => ({
     params: { post: `${post.id}` },
-  }))
-  return{
+  }));
+  return {
     paths,
-    fallback:false,
-  }
-}
+    fallback: false,
+  };
+};
