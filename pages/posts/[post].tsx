@@ -10,9 +10,9 @@ type Post = {
 export default function post(post: Post) {
   return (
     <div className="mx-auto container p-10">
-      <h1 className="text-5xl text-blue-400">POST(投稿){post.id}</h1>
-      <h2 className="text-3xl mt-5 text-gray-600">{post.title}</h2>
-      <p className="text-xl mt-2 text-gray-500">{post.body}</p>
+      <h1 className="text-5xl text-green-100">POST(投稿){post.id}</h1>
+      <h2 className="text-3xl mt-5 text-gray-300">{post.title}</h2>
+      <p className="text-xl mt-2 text-gray-100">{post.body}</p>
     </div>
   );
 }

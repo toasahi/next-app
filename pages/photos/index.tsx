@@ -16,7 +16,7 @@ type Photos = {
 export default function index({ photos }: Photos) {
   return (
     <div className="mx-auto container p-10">
-      <h1 className="text-5xl text-white text-center sticky top-0 bg-gray-600 p-7">Photos一覧</h1>
+      <h1 className="text-5xl text-green-100 text-center sticky top-0 bg-gray-600 p-7">Photos一覧</h1>
       <ul className="leading-4 flex flex-wrap justify-between">
         {photos.map((photo) => {
           return (
