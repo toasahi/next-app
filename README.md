@@ -3,6 +3,8 @@
 ## front: next.js
 ## style: tailwind.css
 
+## api: jsonplaceholder
+
 ### SSG
 静的サイトを生成するPre Rendering。
 HTMLがBuild時に生成。
