@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 export type Photo = {
-  alubum: string;
+  album: string;
   id: number;
   title: string;
   url: string;

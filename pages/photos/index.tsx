@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 
 export interface Photo {
-  alubum: string;
+  album: string;
   id: number;
   title: string;
   url: string;
